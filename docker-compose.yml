@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  habit-reminder-system:
+    build: .
+    container_name: habit-reminder-app
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
