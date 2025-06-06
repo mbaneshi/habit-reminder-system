@@ -86,6 +86,39 @@ habit-reminder-system/
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 
+## Docker Setup
+
+### Build and run with Docker:
+
+```bash
+# Build the Docker image
+docker build -t habit-reminder-system .
+
+# Run the container
+docker run -p 8080:80 habit-reminder-system
+```
+
+Then open `http://localhost:8080` in your browser!
+
+### Using Docker Compose (optional):
+
+Create a `docker-compose.yml` file:
+
+```yaml
+version: '3.8'
+services:
+  habit-app:
+    build: .
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+```
+
+Then run:
+```bash
+docker-compose up -d
+```
+
 ## How to Use
 
 1. **Pomodoro Timer**: Click Start to begin a 25-minute focus session
